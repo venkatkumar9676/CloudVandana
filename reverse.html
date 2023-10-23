@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Words and Sort Array</title>
+</head>
+<body>
+    <h1>Task A: Reverse Every Word in a Sentence</h1>
+    <p>Enter a sentence:</p>
+    <input type="text" id="sentenceInput">
+    <button onclick="reverseWords()">Reverse</button>
+    <p id="reversedSentence"></p>
+
+    <h1>Task B: Sort an Array in Descending Order</h1>
+    <p>Array to sort: [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]</p>
+    <button onclick="sortArray()">Sort</button>
+    <p id="sortedArray"></p>
+
+    <script>
+        function reverseWords() {
+            const sentence = document.getElementById("sentenceInput").value;
+            const words = sentence.split(" ");
+            const reversedWords = words.map((word) => word.split("").reverse().join(""));
+            const reversedSentence = reversedWords.join(" ");
+            document.getElementById("reversedSentence").textContent = "Reversed sentence: " + reversedSentence;
+        }
+
+        function sortArray() {
+            const numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+            numbers.sort((a, b) => b - a);
+            document.getElementById("sortedArray").textContent = "Sorted in descending order: " + numbers;
+        }
+    </script>
+</body>
+</html>
